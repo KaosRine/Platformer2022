@@ -15,7 +15,11 @@ namespace GSGD2.UI
 		[SerializeField]
 		private HealthBarHUDMenu _healthBarHUDMenu = null;
 
+		[SerializeField]
+		private LootHUDMenu _lootHUDMenu = null;
+
 		public LayoutReminderMenu LayoutReminder => _layoutReminder;
 		public HealthBarHUDMenu HealthBarHUDMenu => _healthBarHUDMenu;
+		public LootHUDMenu LootHUDMenu => _lootHUDMenu;
 	}
 }
