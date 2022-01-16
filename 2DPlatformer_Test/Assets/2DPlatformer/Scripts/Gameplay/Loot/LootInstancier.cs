@@ -4,7 +4,7 @@ namespace GSGD2.Gameplay
     using System.Collections.Generic;
     using UnityEngine;
 
-    public class Loot : MonoBehaviour
+    public class LootInstancier : MonoBehaviour
     {
         [SerializeField]
         private PickupInteractor _loot = null;

@@ -10,17 +10,31 @@ namespace GSGD2.UI
         [SerializeField]
         private TextMeshProUGUI _lootAmountText = null;
 
-        private int _lootAmount;
-
-        public void AddLootCount(int amount)
+        private void OnEnable()
         {
-            _lootAmount += amount;
-            _lootAmountText.text = _lootAmount.ToString();
+            var lootManager = LevelReferences.Instance.LootManager;
+            lootManager.LootAdded -= LootManagerOnLootAdded;
+            lootManager.LootAdded += LootManagerOnLootAdded;
+
+            UpdateValues(lootManager.CurrentLoot);
         }
 
-        private void Start()
+        private void OnDisable()
         {
-            _lootAmountText.text = _lootAmount.ToString();
+            if (LevelReferences.HasInstance == true)
+            {
+                LevelReferences.Instance.LootManager.LootAdded -= LootManagerOnLootAdded;
+            }
+        }
+
+        private void LootManagerOnLootAdded(LootManager sender, int currentLoot)
+        {
+            UpdateValues(currentLoot);
+        }
+
+        private void UpdateValues(int loot)
+        {
+            _lootAmountText.text = loot.ToString();
         }
     }
 

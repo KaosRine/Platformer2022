@@ -14,13 +14,8 @@ namespace GSGD2.Gameplay
 
         protected override bool ApplyPickup(ICommandSender from)
         {
-            if (LevelReferences.Instance.UIManager.PlayerHUD.LootHUDMenu == true)
-            {
-                LootHUDMenu lootHUD = LevelReferences.Instance.UIManager.PlayerHUD.LootHUDMenu;
-                lootHUD.AddLootCount(_pickupAmount);
-                return true;
-            }
-            return false;
+            LevelReferences.Instance.LootManager.AddLoot(_pickupAmount);
+            return true;
         }
     }
 }
