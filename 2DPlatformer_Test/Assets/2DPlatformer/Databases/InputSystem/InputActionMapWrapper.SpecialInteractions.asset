@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73493b7c0f3ecb743af8a26a1bae3fe7, type: 3}
+  m_Name: InputActionMapWrapper.SpecialInteractions
+  m_EditorClassIdentifier: 
+  _actionMap:
+    m_Name: Action Map
+    m_Id: 8f5ffa3a-cff4-4cd8-b44c-7c9000f75d0b
+    m_Asset: {fileID: 0}
+    m_Actions:
+    - m_Name: AbilityImproverInteraction
+      m_Type: 1
+      m_ExpectedControlType: Button
+      m_Id: a02f23bd-a037-46b5-88eb-650974303174
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Bindings:
+    - m_Name: 
+      m_Id: 0e1cf02d-8f41-463e-837a-379e39c2b9a0
+      m_Path: <Keyboard>/e
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: AbilityImproverInteraction
+      m_Flags: 0
+    - m_Name: 
+      m_Id: d5f625b8-ead0-4dfc-8569-b8dd8398f0e5
+      m_Path: <Gamepad>/buttonNorth
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: AbilityImproverInteraction
+      m_Flags: 0
