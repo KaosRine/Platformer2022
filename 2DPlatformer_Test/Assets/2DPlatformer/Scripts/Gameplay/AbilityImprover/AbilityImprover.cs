@@ -8,27 +8,23 @@ namespace GSGD2.Gameplay
     using UnityEngine.UI;
     using GSGD2.UI;
 
-    public class AbilityImprover : MonoBehaviour, ICommandSender
+    public class AbilityImprover : MonoBehaviour
     {
         [SerializeField]
         private InputActionMapWrapper _inputActionMap = null;
 
         [SerializeField]
-        private AbilityImproverHUDMenu _abilityImproverHUD = null;
+        private AbilityImproverHeader _abilityImproverHUD = null;
 
         [SerializeField]
-        private int _abilityCost = 5;
-
-        [SerializeField]
-        private PlayerAbilityModifierCommand _playerAbilityModifier = null;
+        private AbilityImproverButton _abilityImproverMenu = null;
 
         private InputAction _abilityImproverInteractionInputAction = null;
-
-        public int AbilityCost => _abilityCost;
 
         private void Start()
         {
             _abilityImproverHUD.gameObject.SetActive(false);
+            _abilityImproverMenu.gameObject.SetActive(false);
         }
 
         public void EnterAbilityImproverTrigger()
@@ -54,16 +50,7 @@ namespace GSGD2.Gameplay
 
         private void AbilityImproverInteractionInputActionPerformed(InputAction.CallbackContext obj)
         {
-            if (LevelReferences.Instance.LootManager.CurrentLoot >= _abilityCost)
-            {
-                _playerAbilityModifier.Apply(this);
-            }
-            else
-            {
-                Debug.Log("Not enough curreny");
-            }
+            _abilityImproverMenu.gameObject.SetActive(true);
         }
-
-        GameObject ICommandSender.GetGameObject() => gameObject;
     }
 }

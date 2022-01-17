@@ -15,6 +15,8 @@ namespace GSGD2.UI
             var lootManager = LevelReferences.Instance.LootManager;
             lootManager.LootAdded -= LootManagerOnLootAdded;
             lootManager.LootAdded += LootManagerOnLootAdded;
+            lootManager.LootRemoved -= LootManagerOnLootRemoved;
+            lootManager.LootRemoved += LootManagerOnLootRemoved;
 
             UpdateValues(lootManager.CurrentLoot);
         }
@@ -24,10 +26,16 @@ namespace GSGD2.UI
             if (LevelReferences.HasInstance == true)
             {
                 LevelReferences.Instance.LootManager.LootAdded -= LootManagerOnLootAdded;
+                LevelReferences.Instance.LootManager.LootRemoved -= LootManagerOnLootRemoved;
             }
         }
 
         private void LootManagerOnLootAdded(LootManager sender, int currentLoot)
+        {
+            UpdateValues(currentLoot);
+        }
+
+        private void LootManagerOnLootRemoved(LootManager sender, int currentLoot)
         {
             UpdateValues(currentLoot);
         }

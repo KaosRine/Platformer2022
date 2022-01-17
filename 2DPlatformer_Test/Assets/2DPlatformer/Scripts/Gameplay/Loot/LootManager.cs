@@ -12,12 +12,23 @@ namespace GSGD2.Gameplay
 
         public delegate void LootManagerEvent(LootManager sender, int currentLoot);
         public event LootManagerEvent LootAdded = null;
+        public event LootManagerEvent LootRemoved = null;
 
         public void AddLoot(int value)
         {
             _currentLoot += value;
 
             LootAdded?.Invoke(this, _currentLoot);
+        }
+
+        public void RemoveLoot(int value)
+        {
+            _currentLoot -= value;
+            if (_currentLoot < 0)
+            {
+                _currentLoot = 0;
+            }
+            LootRemoved?.Invoke(this, _currentLoot);
         }
     }
 }
