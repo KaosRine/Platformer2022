@@ -216,8 +216,6 @@ namespace GSGD2.Player
 		private bool _willPerformWallGrab = false;
 		private bool _willPerformWallJump = false;
 
-		public bool isWallGrabEnabled => _enableWallGrab;
-
 		public delegate TResult CanChangeStateFunc<out TResult>(State currentState, State newState);
 
 		private List<CanChangeStateFunc<bool>> _canChangeToMovementStateList = new List<CanChangeStateFunc<bool>>();
@@ -257,6 +255,7 @@ namespace GSGD2.Player
 		public bool HasAWallInFrontOfCharacter => _characterCollision.HasAWallInFrontOfCharacter;
 		public bool HasAWallBehindCharacter => _characterCollision.HasAWallInFrontOfCharacter;
 		public bool HasASlopeInFrontOfOrBehindCharacter => _characterCollision.HasASlopeInFrontOfOrBehindCharacter;
+		public bool isWallGrabEnabled => _enableWallGrab;
 
 		#endregion Properties
 
