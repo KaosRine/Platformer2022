@@ -5,6 +5,7 @@ namespace GSGD2.UI
     using UnityEngine;
     using TMPro;
     using GSGD2.Gameplay;
+    using UnityEngine.UI;
 
     public class AbilityImproverButton : MonoBehaviour, ICommandSender
     {
@@ -25,6 +26,9 @@ namespace GSGD2.UI
             {
                 _abilityCommand.Apply(this);
                 LevelReferences.Instance.LootManager.RemoveLoot(_abilityCommand.AbilityCost);
+
+                Button button = GetComponent<Button>();
+                button.interactable = false;
             }
             else
             {

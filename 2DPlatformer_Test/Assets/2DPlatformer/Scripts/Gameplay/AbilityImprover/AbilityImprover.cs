@@ -14,17 +14,13 @@ namespace GSGD2.Gameplay
         private InputActionMapWrapper _inputActionMap = null;
 
         [SerializeField]
-        private AbilityImproverHeader _abilityImproverHUD = null;
-
-        [SerializeField]
-        private AbilityImproverButton _abilityImproverMenu = null;
+        private MenuController _abilityImproverMenu = null;
 
         private InputAction _abilityImproverInteractionInputAction = null;
 
-        private void Start()
+        private void Awake()
         {
-            _abilityImproverHUD.gameObject.SetActive(false);
-            _abilityImproverMenu.gameObject.SetActive(false);
+            _abilityImproverMenu.HideMenu();
         }
 
         public void EnterAbilityImproverTrigger()
@@ -34,8 +30,6 @@ namespace GSGD2.Gameplay
                 _abilityImproverInteractionInputAction.performed -= AbilityImproverInteractionInputActionPerformed;
                 _abilityImproverInteractionInputAction.performed += AbilityImproverInteractionInputActionPerformed;
                 _abilityImproverInteractionInputAction.Enable();
-
-                _abilityImproverHUD.gameObject.SetActive(true);
             }
         }
 
@@ -45,12 +39,11 @@ namespace GSGD2.Gameplay
 
             _abilityImproverInteractionInputAction.Disable();
 
-            _abilityImproverHUD.gameObject.SetActive(false);
         }
 
         private void AbilityImproverInteractionInputActionPerformed(InputAction.CallbackContext obj)
         {
-            _abilityImproverMenu.gameObject.SetActive(true);
+            _abilityImproverMenu.ShowMenu();
         }
     }
 }

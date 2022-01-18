@@ -26,6 +26,7 @@ namespace GSGD2.Player
 		[SerializeField] private PlayerDamageable _playerDamageable = null;
 		[SerializeField] private PlayerDamageFeedbackHandler _playerDamageFeedbackHandler = null;
 		[SerializeField] private CameraAimController _cameraAimController = null;
+		[SerializeField] private PlayerControllerDeactivator _playerControllerActivator = null;
 
 		public bool TryGetRigidbody(out Rigidbody rigidbody)
 		{
@@ -128,5 +129,11 @@ namespace GSGD2.Player
 			cameraAimController = _cameraAimController;
 			return cameraAimController != null;
 		}
+
+		public bool TryGetPlayerControllerDeactivator(out PlayerControllerDeactivator playerControllerDeactivator)
+        {
+			playerControllerDeactivator = _playerControllerActivator;
+			return playerControllerDeactivator != null;
+        }
 	}
 }

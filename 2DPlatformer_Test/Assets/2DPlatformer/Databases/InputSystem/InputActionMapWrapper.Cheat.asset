@@ -33,6 +33,30 @@ MonoBehaviour:
       m_Interactions: 
       m_SingletonActionBindings: []
       m_Flags: 0
+    - m_Name: AddCurrency
+      m_Type: 1
+      m_ExpectedControlType: Button
+      m_Id: 65e5a7ab-c61c-4d6f-b279-692985954d58
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    - m_Name: RemoveCurrency
+      m_Type: 1
+      m_ExpectedControlType: Button
+      m_Id: 6897ebb3-2e33-4503-940c-1c4d813d6366
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    - m_Name: RestoreHealth
+      m_Type: 1
+      m_ExpectedControlType: Button
+      m_Id: d4ea65b4-5ef5-47d0-82a8-f908541ac9e0
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
     m_Bindings:
     - m_Name: 
       m_Id: 205325ab-8b3d-4f84-88eb-641e9a6b5c82
@@ -49,4 +73,28 @@ MonoBehaviour:
       m_Processors: 
       m_Groups: 
       m_Action: GoToNextCheckpoint
+      m_Flags: 0
+    - m_Name: 
+      m_Id: c09091fc-e381-402b-8748-34f58ad7d39f
+      m_Path: <Keyboard>/f3
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: AddCurrency
+      m_Flags: 0
+    - m_Name: 
+      m_Id: 4f4aff9b-5d16-4120-b1fe-31c0b1ac95a5
+      m_Path: <Keyboard>/f4
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: RemoveCurrency
+      m_Flags: 0
+    - m_Name: 
+      m_Id: 68a229f6-a5fd-4199-b08c-0d18d8415d63
+      m_Path: <Keyboard>/f5
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: RestoreHealth
       m_Flags: 0
