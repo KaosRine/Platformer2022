@@ -57,6 +57,46 @@ MonoBehaviour:
       m_Interactions: 
       m_SingletonActionBindings: []
       m_Flags: 0
+    - m_Name: AddJump
+      m_Type: 1
+      m_ExpectedControlType: Button
+      m_Id: 83aea929-c42e-4e27-9591-f02d0561e777
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    - m_Name: RemoveJump
+      m_Type: 1
+      m_ExpectedControlType: Button
+      m_Id: ea7048c0-c3d1-43f3-bc2d-d9265fb0756f
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    - m_Name: AddDash
+      m_Type: 1
+      m_ExpectedControlType: Button
+      m_Id: aa509216-c287-4914-90ec-47fbfa162065
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    - m_Name: RemoveDash
+      m_Type: 1
+      m_ExpectedControlType: Button
+      m_Id: 070a12c1-9905-4c9a-8820-f79b28c62f26
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    - m_Name: EnableWallGrab
+      m_Type: 1
+      m_ExpectedControlType: Button
+      m_Id: 2631fcc9-37bd-4f50-ad63-194da5afcb50
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
     m_Bindings:
     - m_Name: 
       m_Id: 205325ab-8b3d-4f84-88eb-641e9a6b5c82
@@ -97,4 +137,44 @@ MonoBehaviour:
       m_Processors: 
       m_Groups: 
       m_Action: RestoreHealth
+      m_Flags: 0
+    - m_Name: 
+      m_Id: d6779502-e657-436c-afdb-f12c5816b9d1
+      m_Path: <Keyboard>/numpad1
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: AddJump
+      m_Flags: 0
+    - m_Name: 
+      m_Id: 1d971484-6b93-4a8a-910f-0fb77f9cb7aa
+      m_Path: <Keyboard>/numpad4
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: RemoveJump
+      m_Flags: 0
+    - m_Name: 
+      m_Id: 272733d4-6b99-4c3e-8adc-400e96c9054f
+      m_Path: <Keyboard>/numpad2
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: AddDash
+      m_Flags: 0
+    - m_Name: 
+      m_Id: b489e52e-db96-4038-9283-2eb9a5b85ff8
+      m_Path: <Keyboard>/numpad5
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: RemoveDash
+      m_Flags: 0
+    - m_Name: 
+      m_Id: 2b3d1151-5635-4f8d-b286-3a5fc44aeff7
+      m_Path: <Keyboard>/numpad3
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: EnableWallGrab
       m_Flags: 0
