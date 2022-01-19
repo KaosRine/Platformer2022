@@ -54,9 +54,13 @@ namespace GSGD2.Player
                         {
                             _animator.SetTrigger("EndJump");
                         }
+                        _animator.SetBool("Falling", false);
                     }
                     break;
                 case CubeController.State.Falling:
+                    {
+                        _animator.SetBool("Falling", true);
+                    }
                     break;
                 case CubeController.State.Bumping:
                     break;
@@ -67,10 +71,20 @@ namespace GSGD2.Player
                 case CubeController.State.EndJump:
                     break;
                 case CubeController.State.WallGrab:
+                    {
+                        _animator.SetBool("WallGrab", true);
+                    }
                     break;
                 case CubeController.State.WallJump:
+                    {
+                        _animator.SetBool("WallGrab", false);
+                        _animator.SetTrigger("WallJump");
+                    }
                     break;
                 case CubeController.State.Dashing:
+                    {
+                        _animator.SetTrigger("Dash");
+                    }
                     break;
                 case CubeController.State.DamageTaken:
                     break;
