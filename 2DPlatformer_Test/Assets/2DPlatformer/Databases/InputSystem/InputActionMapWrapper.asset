@@ -105,6 +105,30 @@ MonoBehaviour:
       m_Interactions: 
       m_SingletonActionBindings: []
       m_Flags: 0
+    - m_Name: PauseMenu
+      m_Type: 1
+      m_ExpectedControlType: Button
+      m_Id: 3be8db68-e82a-4683-a893-35bd2e850b10
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    - m_Name: Glide
+      m_Type: 1
+      m_ExpectedControlType: Button
+      m_Id: ffdf39b7-5944-4718-942f-72b13ce7df57
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    - m_Name: StopGlide
+      m_Type: 1
+      m_ExpectedControlType: Button
+      m_Id: d0061ac1-21bf-4fd3-84d4-364d89a83067
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
     m_Bindings:
     - m_Name: 
       m_Id: b82491d4-813d-4be0-bea8-2217def02fb7
@@ -329,4 +353,36 @@ MonoBehaviour:
       m_Processors: 
       m_Groups: 
       m_Action: GroundSmash
+      m_Flags: 0
+    - m_Name: 
+      m_Id: e4a4fa19-0214-4a0f-a7bd-9e60a6c82b0d
+      m_Path: <Keyboard>/q
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: GroundSmash
+      m_Flags: 0
+    - m_Name: 
+      m_Id: d3ed97af-cd31-4f24-855f-282d3140428d
+      m_Path: <Keyboard>/escape
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: PauseMenu
+      m_Flags: 0
+    - m_Name: 
+      m_Id: e419ac24-38a8-41cd-a6f9-73e5c56e5462
+      m_Path: <Mouse>/rightButton
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Glide
+      m_Flags: 0
+    - m_Name: 
+      m_Id: d74d03a3-1ce6-42e6-95e5-6d749eea8afe
+      m_Path: <Mouse>/rightButton
+      m_Interactions: Press(behavior=1)
+      m_Processors: 
+      m_Groups: 
+      m_Action: StopGlide
       m_Flags: 0

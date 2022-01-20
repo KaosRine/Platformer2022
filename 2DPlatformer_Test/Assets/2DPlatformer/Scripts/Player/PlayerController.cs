@@ -21,6 +21,9 @@ namespace GSGD2.Player
 		private const string RELEASE_ITEM_ACTION_NAME = "ReleaseItem";
 		private const string USE_ITEM_ACTION_NAME = "UseItem";
 		private const string GROUND_SMASH_ACTION_NAME = "GroundSmash";
+		private const string PAUSE_MENU_ACTION_NAME = "PauseMenu";
+		private const string GLIDE_ACTION_NAME = "Glide";
+		private const string STOP_GLIDE_ACTION_NAME = "StopGlide";
 
 		[SerializeField]
 		private InputActionMapWrapper _inputActionMapWrapper;
@@ -39,6 +42,9 @@ namespace GSGD2.Player
 		private InputAction _releaseItemInputAction = null;
 		private InputAction _useItemInputAction = null;
 		private InputAction _groundSmashInputAction = null;
+		private InputAction _pauseMenuInputAction = null;
+		private InputAction _glideInputAction = null;
+		private InputAction _stopGlide_inputAction = null;
 
 		public bool UseMouseForLookDirection => _useMouseForLookDirection;
 		public float HorizontalMove => _horizontalMoveInputAction.ReadValue<float>();
@@ -56,6 +62,9 @@ namespace GSGD2.Player
 		public event InputEvent ReleaseItemPerformed = null;
 		public event InputEvent UseItemPerformed = null;
 		public event InputEvent GroundSmashPerformed = null;
+		public event InputEvent PauseMenuPerformed = null;
+		public event InputEvent GlidePerformed = null;
+		public event InputEvent StopGlidePerformed = null;
 
 		private void OnEnable()
 		{
@@ -111,9 +120,28 @@ namespace GSGD2.Player
 				_groundSmashInputAction.performed -= GroundSmashInputAction_performed;
 				_groundSmashInputAction.performed += GroundSmashInputAction_performed;
 			}
+
+            if (_inputActionMapWrapper.TryFindAction(PAUSE_MENU_ACTION_NAME, out _pauseMenuInputAction, true) == true)
+            {
+				_pauseMenuInputAction.performed -= PauseMenuInputAction_performed;
+				_pauseMenuInputAction.performed += PauseMenuInputAction_performed;
+            }
+
+            if (_inputActionMapWrapper.TryFindAction(GLIDE_ACTION_NAME, out _glideInputAction, true) == true)
+            {
+				_glideInputAction.performed -= GlideInputAction_performed;
+				_glideInputAction.performed += GlideInputAction_performed;
+            }
+
+            if (_inputActionMapWrapper.TryFindAction(STOP_GLIDE_ACTION_NAME, out _stopGlide_inputAction, true) == true)
+            {
+                _stopGlide_inputAction.performed -= StopGlideInputAction_performed;
+                _stopGlide_inputAction.performed += StopGlideInputAction_performed;
+			}
 		}
 
-		private void OnDisable()
+
+        private void OnDisable()
 		{
 			_horizontalMoveInputAction.Disable();
 			_jumpInputAction.Disable();
@@ -127,6 +155,9 @@ namespace GSGD2.Player
 			_verticalLookInputAction.Disable();
 			_useItemInputAction.Disable();
 			_groundSmashInputAction.Disable();
+			_pauseMenuInputAction.Disable();
+			_glideInputAction.Disable();
+			_stopGlide_inputAction.Disable();
 
 			_jumpInputAction.performed -= JumpInputAction_performed;
 			_dashInputAction.performed -= DashInputAction_performed;
@@ -136,6 +167,9 @@ namespace GSGD2.Player
 			_releaseItemInputAction.performed -= ReleaseItemInputAction_performed;
 			_useItemInputAction.performed -= UseItemInputAction_performed;
 			_groundSmashInputAction.performed -= GroundSmashInputAction_performed;
+			_pauseMenuInputAction.performed -= PauseMenuInputAction_performed;
+			_glideInputAction.performed -= GlideInputAction_performed;
+			_stopGlide_inputAction.performed -= GlideInputAction_performed;
 		}
 
 		private void JumpInputAction_performed(InputAction.CallbackContext obj)
@@ -176,5 +210,20 @@ namespace GSGD2.Player
 		{
 			GroundSmashPerformed?.Invoke(this, obj);
 		}
+
+		private void PauseMenuInputAction_performed(InputAction.CallbackContext obj)
+        {
+			PauseMenuPerformed?.Invoke(this, obj);
+        }
+
+        private void GlideInputAction_performed(InputAction.CallbackContext obj)
+        {
+			GlidePerformed?.Invoke(this, obj);
+        }
+
+        private void StopGlideInputAction_performed(InputAction.CallbackContext obj)
+        {
+			StopGlidePerformed?.Invoke(this, obj);
+        }
 	}
 }

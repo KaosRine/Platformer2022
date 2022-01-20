@@ -15,12 +15,21 @@ namespace GSGD2.UI
 		[SerializeField]
 		private PlayerHUDMenu _playerHUD = null;
 
+		[SerializeField]
+		private PauseMenu _pauseMenu = null;
+
 		public Canvas MainCanvas => _mainCanvas;
 		public PlayerHUDMenu PlayerHUD => _playerHUD;
+		public PauseMenu PauseMenu => _pauseMenu;
 
 		public void ShowPlayerHUD(bool isActive)
 		{
 			_playerHUD.SetActive(isActive);
 		}
+
+		public void ShowPauseMenu(bool isActive)
+        {
+			_pauseMenu.SetActive(isActive);
+        }
 	}
 }

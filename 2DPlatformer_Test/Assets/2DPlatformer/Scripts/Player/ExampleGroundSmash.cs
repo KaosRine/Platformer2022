@@ -47,6 +47,7 @@ namespace GSGD2.Player
 			if (_usableInState.HasFlag(_cubeController.CurrentState) && _isOnGroundSmash == false)
 			{
 				_isOnGroundSmash = true;
+
 				// TODO AL : maybe reset vel to 0 before applying the bump
 				_rigidbody.AddForce(new Vector3(0f, _force * -1, 0f), ForceMode.Impulse);
 				_cubeController.enabled = false;

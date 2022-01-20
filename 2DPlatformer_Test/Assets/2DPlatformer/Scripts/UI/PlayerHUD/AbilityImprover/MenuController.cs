@@ -18,6 +18,8 @@ namespace GSGD2.UI
         {
             LevelReferences levelReference = LevelReferences.Instance;
             levelReference.PlayerReferences.TryGetPlayerControllerDeactivator(out _playerControllerDeactivator);
+
+            gameObject.SetActive(false);
         }
 
         public void ShowMenu()
