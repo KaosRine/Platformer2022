@@ -9,10 +9,6 @@ namespace GSGD2.Player
         [SerializeField]
         private PlayerReferences _playerReferences = null;
 
-        private Rigidbody _rigidbody = null;
-        private CubeController _cubeController = null;
-        private PlayerController _playerController = null;
-        private CharacterCollision _characterCollision = null;
 
         [SerializeField]
         private float _speedWhileInAir = 5f;
@@ -27,6 +23,10 @@ namespace GSGD2.Player
         private CubeController.State _usableInState = CubeController.State.None;
 
         private bool _isGliding = false;
+        private Rigidbody _rigidbody = null;
+        private CubeController _cubeController = null;
+        private PlayerController _playerController = null;
+        private CharacterCollision _characterCollision = null;
 
         private void Awake()
         {
@@ -93,7 +93,7 @@ namespace GSGD2.Player
                 {
                     _cubeController.ChangeState(CubeController.State.Falling);
                     _cubeController.ForceCheckGround();
-
+                    _isGliding = false;
                 }
 
                 _cubeController.ForceCheckGround();
